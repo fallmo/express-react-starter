@@ -1,0 +1,27 @@
+{
+  "name": "react-node-workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app",
+    "dev": "nodemon src/app",
+    "react": "npm run start --prefix ./react",
+    "both": "concurrently \"npm run dev\" \"npm run react\"",
+    "build-server": "node scripts/files",
+    "build-react": "npm run build --prefix ./react",
+    "setup-package": "node scripts/package",
+    "setup-config": "node scripts/config",
+    "build": "npm run setup-package && npm run setup-config && npm run build-server && npm run build-react"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
